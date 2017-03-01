@@ -1,0 +1,6 @@
+[user]
+	email = david942j@gmail.com
+	name = david942j
+[core]
+	editor = vim
+	excludesfile = /home/david942j/.gitignore_global
