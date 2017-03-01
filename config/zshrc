@@ -84,13 +84,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export SCALA_HOME=$HOME/scala-2.11.8
-if [ -f ~/.rbenv ]; then
+if [ -d ~/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 alias objdump='objdump -M intel'
 
-if [ -f ~/.pyenv ]; then
+if [ -d ~/.pyenv ]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
