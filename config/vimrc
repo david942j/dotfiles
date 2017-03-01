@@ -36,9 +36,16 @@ set hlsearch
 set incsearch
 set cursorline
 set smartcase
+set foldmethod=marker
 colorscheme ron
+set t_Co=256
+set autoread
+set showmatch
+set showmode
+set nobackup
+autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 
-"--------------------------------------------------------------------
+
 " Colors {{{
 highlight Folded ctermfg=243 ctermbg=234 guifg=Cyan guibg=DarkGrey
 highlight FoldColumn ctermbg=234 guifg=Cyan guibg=Grey
@@ -48,7 +55,6 @@ highlight Pmenu ctermfg=252 ctermbg=17
 highlight Normal ctermbg=none
 highlight ColorColumn ctermbg=53
 " }}}
-
 
 " Status line {{{
 highlight StatusLine cterm=none ctermbg=235
@@ -79,13 +85,6 @@ endfunction
 set statusline=%!BuildStatusLine(winnr())
 " }}}
 
-set t_Co=256
-set autoread
-set showmatch
-set showmode
-set nobackup
-autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
-
 " Custom keybinding {{{
 " Space as leader key.
 let mapleader="\<Space>"
@@ -97,6 +96,10 @@ nnoremap <F2> :set paste!<BAR>set paste?<CR>
 
 vmap <Tab> >
 vmap <S-Tab> <
+
+" One less shift!
+vnoremap ; :
+nnoremap ; :
 
 " 0 is sooo much easier to type than ^, and ^ is more useful.
 nnoremap 0 ^
@@ -111,16 +114,23 @@ inoremap jk <esc>
 
 " open new file
 nnoremap <C-n> :tabe<CR>
+
+" Don't show me that stupid window :D
+nnoremap q: :q
+
+" Folds
+nnoremap <CR> za
+
 " }}}
 
 
-" Settings for plugins
+" Settings for plugins {{{
 
 " fzf {{{
 let g:fzf_command_prefix = 'FZF'
 " Mappings {{{
 
-nnoremap <Leader>f :FZF<CR>
+nnoremap <C-f> :FZF<CR>
 nnoremap <Leader>g :FZFAg<CR>
 " }}}
 " }}}
@@ -130,5 +140,6 @@ nnoremap <Leader>g :FZFAg<CR>
 let g:NERDSpaceDelims=1
 " }}}
 " Mappings {{{
+" }}}
 " }}}
 " }}}
