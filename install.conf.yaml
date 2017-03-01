@@ -14,13 +14,16 @@
     ~/.tmux.conf: config/tmux.conf
 # vim
     ~/.vimrc: config/vimrc
+    ~/.vim/autoload/plug.vim:
+      create: true
+      path: modules/vim-plug/plug.vim
 # default codes
     ~/.defaults: config/defaults
 # zsh
     ~/.zshrc: config/zshrc
 # gdb
     ~/.gdbinit: config/gdbinit
-    ~/peda: config/peda
+    ~/peda: modules/peda
     ~/.gdb: config/gdb/
 
 

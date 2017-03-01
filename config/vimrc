@@ -1,3 +1,23 @@
+" Plugins {{{
+" Use vim-plug to manage.
+call plug#begin('~/.vim/plugged')
+
+" File navigation {{{
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" }}}
+"
+" Syntax highlight {{{
+Plug 'sheerun/vim-polyglot'
+" }}}
+
+" Fast comment {{{
+Plug 'scrooloose/nerdcommenter'
+" }}}
+
+call plug#end()
+" }}}
+
 set number
 set mouse=a
 syntax on
@@ -65,9 +85,15 @@ set showmatch
 set showmode
 set nobackup
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-nmap <leader>p :set paste!<BAR>set paste?<CR>
+
+" Custom keybinding {{{
+" Space as leader key.
+let mapleader="\<Space>"
+let maplocalleader="\<Space>"
+
+" Use F2 to toggle paste/no paste mode
+set pastetoggle=<F2>
+nnoremap <F2> :set paste!<BAR>set paste?<CR>
 
 vmap <Tab> >
 vmap <S-Tab> <
@@ -78,5 +104,31 @@ nnoremap ^ 0
 vnoremap 0 ^
 vnoremap ^ 0
 
-imap jk <esc>
+inoremap <C-e> <End>
+nnoremap <C-e> <End>
 
+inoremap jk <esc>
+
+" open new file
+nnoremap <C-n> :tabe<CR>
+" }}}
+
+
+" Settings for plugins
+
+" fzf {{{
+let g:fzf_command_prefix = 'FZF'
+" Mappings {{{
+
+nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>g :FZFAg<CR>
+" }}}
+" }}}
+
+" NERDCommenter {{{
+" Settings {{{
+let g:NERDSpaceDelims=1
+" }}}
+" Mappings {{{
+" }}}
+" }}}
