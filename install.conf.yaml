@@ -1,9 +1,26 @@
+- shell:
+  -
+    command: git submodule update --init --recursive
+    description: Installing submodules
+    stdout: true
+
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+# git
+    ~/.gitconfig: config/gitconfig
+    ~/.gitignore_global: config/gitignore_global
+# tmux
+    ~/.tmux.conf: config/tmux.conf
+# vim
+    ~/.vimrc: config/vimrc
+# default codes
+    ~/.defaults: config/defaults
+# zsh
+    ~/.zshrc: config/zshrc
+# gdb
+    ~/.gdbinit: config/gdbinit
+    ~/peda: config/peda
+    ~/.gdb: config/gdb/
 
 

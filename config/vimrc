@@ -6,8 +6,8 @@ set softtabstop=2
 set expandtab
 set shiftwidth=2
 au FileType Makefile set noexpandtab
-au BufNewFile *.rb 0r ~/.default.rb
-au BufNewFile *.py 0r ~/.default.py
+au BufNewFile *.rb 0r ~/.defaults/default.rb
+au BufNewFile *.py 0r ~/.defaults/default.py
 set ruler
 set backspace=2
 set ic
