@@ -6,9 +6,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " }}}
-"
+
 " Syntax highlight {{{
 Plug 'sheerun/vim-polyglot'
+" }}}
+
+" indent line {{{
+Plug 'Yggdroot/indentLine'
 " }}}
 
 " Fast comment {{{
@@ -135,11 +139,12 @@ nnoremap <Leader>g :FZFAg<CR>
 " }}}
 " }}}
 
+" indentLine {{{
+let g:indentLine_char = '|'
+" }}}
+
 " NERDCommenter {{{
-" Settings {{{
 let g:NERDSpaceDelims=1
 " }}}
-" Mappings {{{
-" }}}
-" }}}
+
 " }}}
