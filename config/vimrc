@@ -134,9 +134,14 @@ nnoremap <CR> za
 let g:fzf_command_prefix = 'FZF'
 " Mappings {{{
 
-nnoremap <C-f> :FZF<CR>
+nnoremap <C-f> :tabe<CR>:FZF<CR>
+nnoremap <C-g> :tabe<CR>:FZFGFiles<CR>
 nnoremap <Leader>g :FZFAg<CR>
 " }}}
+" }}}
+
+" vim-polyglot {{{
+let g:vim_markdown_conceal = 0
 " }}}
 
 " indentLine {{{
