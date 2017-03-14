@@ -22,7 +22,8 @@ Plug 'scrooloose/nerdcommenter'
 call plug#end()
 " }}}
 
-set number
+set nu
+set rnu
 set mouse=a
 syntax on
 set ts=2
