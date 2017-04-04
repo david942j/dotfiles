@@ -23,7 +23,7 @@
     ~/.zshrc: config/zshrc
 # gdb
     ~/.gdbinit: config/gdbinit
-    ~/peda: modules/peda
+    ~/.gdbinit-gef.py: config/gdbinit-gef.py
     ~/.gdb: config/gdb/
 
 

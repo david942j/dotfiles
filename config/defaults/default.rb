@@ -10,7 +10,7 @@ require 'one_gadget' # https://github.com/david942j/one_gadget
 
 host, port = '', 31337
 @local = false
-if ARGV,empty?
+if ARGV.empty?
   host = '127.0.0.1'; @local = true
 else
   raise ArgumentError, 'host not set' if host.empty?

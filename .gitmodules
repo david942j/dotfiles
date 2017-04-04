@@ -4,6 +4,3 @@
 [submodule "modules/vim-plug"]
 	path = modules/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
-[submodule "modules/peda"]
-	path = modules/peda
-	url = https://github.com/longld/peda
