@@ -96,5 +96,6 @@ if [ -d ~/.pyenv ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 export LANG=zh_TW.UTF-8
+export TERM=xterm-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

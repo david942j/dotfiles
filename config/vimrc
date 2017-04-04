@@ -11,12 +11,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 " }}}
 
-" indent line {{{
+" Indent line {{{
 Plug 'Yggdroot/indentLine'
 " }}}
 
 " Fast comment {{{
 Plug 'scrooloose/nerdcommenter'
+" }}}
+
+" Color theme {{{
+Plug 'david942j/ayu-vim'
 " }}}
 
 call plug#end()
@@ -153,4 +157,12 @@ let g:indentLine_char = '|'
 let g:NERDSpaceDelims=1
 " }}}
 
+" ayu-vim {{{
+try
+  colorscheme ayu
+  set termguicolors
+  let ayucolor="dark"   " for dark version of theme
+catch /^Vim\%((\a\+)\)\=:E185/
+endtry
+" }}}
 " }}}
