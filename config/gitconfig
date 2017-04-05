@@ -3,4 +3,4 @@
 	name = david942j
 [core]
 	editor = vim
-	excludesfile = /home/david942j/.gitignore_global
+	excludesfile = ~/.gitignore_global
