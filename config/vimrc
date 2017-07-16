@@ -106,6 +106,9 @@ nnoremap <F2> :set paste!<BAR>set paste?<CR>
 vmap <Tab> >
 vmap <S-Tab> <
 
+nmap <Tab> gt
+nmap <S-Tab> gT
+
 " One less shift!
 vnoremap ; :
 nnoremap ; :
