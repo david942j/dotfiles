@@ -1,0 +1,4 @@
+Pry.config.theme = 'ayu-dark'
+Pry.config.theme_options = { paint_key_as_symbol: true }
+begin; require 'pwn'; rescue LoadError; end
+begin; require 'heapinfo'; rescue LoadError; end

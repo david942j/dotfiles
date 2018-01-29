@@ -25,5 +25,6 @@
     ~/.gdbinit: config/gdbinit
     ~/.gdbinit-gef.py: config/gdbinit-gef.py
     ~/.gdb: config/gdb/
-
+# pry
+    ~/.pryrc: config/pryrc
 
