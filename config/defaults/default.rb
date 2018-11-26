@@ -21,6 +21,7 @@ def h;@h ||= heapinfo(@p);end
 def elf; @elf ||= ELF.new(@p); end
 def debug!; context.log_level = :debug; end
 #================= Exploit Start ====================
-# context.arch = 'amd64'
+# context.arch = :amd64
+# debug!
 
 z.interact
