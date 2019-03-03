@@ -133,6 +133,16 @@ nnoremap q: :q
 " Folds
 nnoremap <CR> za
 
+" To avoid C-a collision with tmux.
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+" Quick load/save
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>e :e<CR>
+
+" Reindent all code, while preserving cursor location
+nnoremap <Leader>= mqHmwgg=G`wzt`q
 " }}}
 
 
@@ -159,7 +169,14 @@ let g:indentLine_fileTypeExclude = ['tex']
 " }}}
 
 " NERDCommenter {{{
+" Settings {{{
 let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign='left'
+" }}}
+" Mappings {{{
+nmap \ <Leader>c<Space>
+vmap \ <Leader>c<Space>
+" }}}
 " }}}
 
 " ayu-vim {{{
