@@ -23,6 +23,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'david942j/ayu-vim'
 " }}}
 
+" Status line {{{
+Plug 'itchyny/lightline.vim'
+" }}}
+
 call plug#end()
 " }}}
 
@@ -66,32 +70,7 @@ highlight ColorColumn ctermbg=53
 " }}}
 
 " Status line {{{
-highlight StatusLine cterm=none ctermbg=235
-highlight StatusLineNC cterm=none ctermbg=233
-highlight Status1C ctermfg=blue ctermbg=235
-highlight Status2C ctermfg=red ctermbg=235
-highlight Status3C ctermfg=yellow ctermbg=235
-highlight Status4C ctermfg=green ctermbg=235
-highlight Status1NC ctermfg=darkgray ctermbg=233
-highlight Status2NC ctermfg=124 ctermbg=233
-highlight Status3NC ctermfg=100 ctermbg=233
-highlight Status4NC ctermfg=70 ctermbg=233
 set laststatus=2
-function! SetHighlight(nr)
-  for i in [1,2,3,4]
-    if (winnr() == a:nr)
-      exec 'highlight! link Status'.i.' Status'.i.'C'
-    else
-      exec 'highlight! link Status'.i.' Status'.i.'NC'
-    endif
-  endfor
-  return ''
-endfunction
-function! BuildStatusLine(nr)
-  return '%{SetHighlight(' . a:nr . ')}' .
-        \ '%=%#Status1#%F %#Status2#[%{&encoding}/%{&fileformat}/%Y]%#Status3# %l,%c %#Status4#%4P '
-endfunction
-set statusline=%!BuildStatusLine(winnr())
 " }}}
 
 " Custom keybinding {{{
@@ -187,4 +166,17 @@ try
 catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 " }}}
+" {{{ lightline
+set noshowmode " no need showmode!
+ let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component_function': {
+      \   'filename': 'LightLineFilename',
+      \ },
+      \ }
+ function! LightLineFilename()
+   return expand('%:~:.') !=# '' ? expand('%:~:.') : '[No Name]'
+ endfunction
+" }}}
+
 " }}}
