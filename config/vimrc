@@ -116,9 +116,10 @@ nnoremap <CR> za
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-" Quick load/save
+" Quick save/load/quit
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :e<CR>
+nnoremap <Leader>q :q<CR>
 
 " Reindent all code, while preserving cursor location
 nnoremap <Leader>= mqHmwgg=G`wzt`q
