@@ -121,6 +121,7 @@ nnoremap - <C-x>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>e :e<CR>
 nnoremap <Leader>q :q<CR>
+map <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=a"<BAR>set mouse?<CR>
 
 " Reindent all code, while preserving cursor location
 nnoremap <Leader>= mqHmwgg=G`wzt`q
