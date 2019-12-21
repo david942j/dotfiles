@@ -30,6 +30,7 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 " }}}
 
+set spell spelllang=en_us
 set nu
 set rnu
 set mouse=a

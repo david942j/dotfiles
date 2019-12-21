@@ -90,7 +90,6 @@ alias tmux='tmux -u'
 alias ta='tmux attach -t'
 alias tl='tmux ls'
 # }}}
-export SCALA_HOME=$HOME/scala-2.11.8
 if [ -d ~/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
