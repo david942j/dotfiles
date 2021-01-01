@@ -18,7 +18,7 @@ $z = Sock.new(host, port)
 def z;$z;end
 def h;@h ||= heapinfo(@p);end
 def elf; @elf ||= ELF.new(@p); end
-def libc; @libc ||= ELF.new('./libc.so.6'); end
+def libc; @libc ||= ELF.new('./libc.so.6', checksec: false); end
 def debug!; context.log_level = :debug; end
 #================= Exploit Start ====================
 context.arch = :amd64

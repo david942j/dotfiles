@@ -107,3 +107,4 @@ export TERM=xterm-256color
 export PATH=$HOME/.local/bin:$HOME/local/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export LC_CTYPE=C.UTF-8
