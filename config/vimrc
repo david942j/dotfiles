@@ -30,6 +30,7 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 " }}}
 
+set tabpagemax=500
 set spell spelllang=en_us
 set nu
 set rnu
@@ -84,6 +85,10 @@ let maplocalleader="\<Space>"
 set pastetoggle=<F2>
 nnoremap <F2> :set paste!<BAR>set paste?<CR>
 
+" Use F3 to disable line decorations. Easier copy content to the system
+" clipboard.
+nnoremap <F3> :set invnumber! invrelativenumber!<BAR>:IndentLinesToggle<CR>
+
 vmap <Tab> >
 vmap <S-Tab> <
 
@@ -126,6 +131,15 @@ map <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=a"<BAR>set mouse?
 
 " Reindent all code, while preserving cursor location
 nnoremap <Leader>= mqHmwgg=G`wzt`q
+
+" Switch to last-active tab
+if !exists('g:Lasttab')
+    let g:Lasttab = 1
+    let g:Lasttab_backup = 1
+endif
+autocmd! TabLeave * let g:Lasttab_backup = g:Lasttab | let g:Lasttab = tabpagenr()
+autocmd! TabClosed * let g:Lasttab = g:Lasttab_backup
+nmap <silent> <Leader>t :exe "tabn " . g:Lasttab<cr>
 " }}}
 
 
@@ -133,11 +147,13 @@ nnoremap <Leader>= mqHmwgg=G`wzt`q
 
 " fzf {{{
 let g:fzf_command_prefix = 'FZF'
+let g:fzf_buffers_jump = 1
 " Mappings {{{
 
 nnoremap <C-f> :tabe<CR>:FZF<CR>
 nnoremap <C-g> :tabe<CR>:FZFGFiles<CR>
 nnoremap <Leader>g :FZFAg<CR>
+nnoremap <Leader>f :FZFBuffers<CR>
 " }}}
 " }}}
 
@@ -181,6 +197,11 @@ set noshowmode " no need showmode!
  function! LightLineFilename()
    return expand('%:~:.') !=# '' ? expand('%:~:.') : '[No Name]'
  endfunction
+" }}}
+
+" {{{ vim-clang-format
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat!<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat!<CR>
 " }}}
 
 " }}}
